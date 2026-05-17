@@ -179,8 +179,9 @@
 </style>
 </head>
 <body class="bg-background text-on-background min-h-screen flex flex-col relative font-body-md antialiased selection:bg-secondary-container selection:text-white">
-<!-- Full Bleed Background — image has white fade baked in, no overlay needed -->
-<div class="fixed inset-0 z-0 bg-cover bg-center" style="background-image: url('assets/hero.png');"></div>
+<!-- Full Bleed Background with CSS fade to white at bottom -->
+<div class="fixed inset-0 z-0 bg-cover bg-top" style="background-image: url('assets/hero.png');"></div>
+<div class="fixed inset-0 z-0" style="background: linear-gradient(to bottom, transparent 40%, white 80%);"></div>
 <!-- Main Content Area -->
 <main class="flex-grow flex flex-col justify-center items-center relative z-10 px-margin-mobile md:px-0 pt-24 pb-12">
 <div class="w-full max-w-container-max bg-surface-container-lowest/95 backdrop-blur-sm p-8 md:p-12 border border-outline-variant rounded-sm shadow-2xl relative">
