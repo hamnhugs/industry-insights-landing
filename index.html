@@ -6,227 +6,554 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Public+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-                "surface-container-lowest": "#ffffff",
-                "primary-fixed-dim": "#bec6e0",
-                "on-surface-variant": "#45464d",
-                "on-error": "#ffffff",
-                "inverse-on-surface": "#eff1f3",
-                "primary": "#000000",
-                "inverse-surface": "#2d3133",
-                "surface-container-highest": "#e0e3e5",
-                "on-error-container": "#93000a",
-                "surface-tint": "#565e74",
-                "surface": "#f7f9fb",
-                "surface-bright": "#f7f9fb",
-                "on-secondary-container": "#5c2400",
-                "on-background": "#191c1e",
-                "secondary-container": "#fd761a",
-                "on-secondary-fixed-variant": "#783200",
-                "error": "#ba1a1a",
-                "tertiary-container": "#0b1c30",
-                "inverse-primary": "#bec6e0",
-                "outline": "#76777d",
-                "on-tertiary-fixed": "#0b1c30",
-                "error-container": "#ffdad6",
-                "surface-container-high": "#e6e8ea",
-                "on-secondary": "#ffffff",
-                "primary-container": "#131b2e",
-                "surface-container-low": "#f2f4f6",
-                "on-primary-fixed-variant": "#3f465c",
-                "on-tertiary-container": "#75859d",
-                "on-secondary-fixed": "#341100",
-                "tertiary-fixed": "#d3e4fe",
-                "surface-container": "#eceef0",
-                "tertiary-fixed-dim": "#b7c8e1",
-                "surface-variant": "#e0e3e5",
-                "secondary-fixed": "#ffdbca",
-                "on-primary": "#ffffff",
-                "background": "#f7f9fb",
-                "secondary-fixed-dim": "#ffb690",
-                "secondary": "#9d4300",
-                "on-tertiary": "#ffffff",
-                "surface-dim": "#d8dadc",
-                "on-primary-fixed": "#131b2e",
-                "on-tertiary-fixed-variant": "#38485d",
-                "on-primary-container": "#7c839b",
-                "on-surface": "#191c1e",
-                "outline-variant": "#c6c6cd",
-                "tertiary": "#000000",
-                "primary-fixed": "#dae2fd"
-        },
-        "borderRadius": {
-                "DEFAULT": "0.125rem",
-                "lg": "0.25rem",
-                "xl": "0.5rem",
-                "full": "0.75rem"
-        },
-        "spacing": {
-                "gutter": "24px",
-                "stack-lg": "32px",
-                "container-max": "680px",
-                "margin-mobile": "16px",
-                "stack-sm": "8px",
-                "stack-md": "16px",
-                "section-gap": "64px"
-        },
-        "fontFamily": {
-                "body-lg": [
-                        "Public Sans"
-                ],
-                "body-md": [
-                        "Public Sans"
-                ],
-                "headline-lg": [
-                        "Inter"
-                ],
-                "display-lg": [
-                        "Inter"
-                ],
-                "headline-md": [
-                        "Inter"
-                ],
-                "headline-lg-mobile": [
-                        "Inter"
-                ],
-                "label-caps": [
-                        "Inter"
-                ],
-                "button": [
-                        "Inter"
-                ]
-        },
-        "fontSize": {
-                "body-lg": [
-                        "18px",
-                        {
-                                "lineHeight": "28px",
-                                "fontWeight": "400"
-                        }
-                ],
-                "body-md": [
-                        "16px",
-                        {
-                                "lineHeight": "24px",
-                                "fontWeight": "400"
-                        }
-                ],
-                "headline-lg": [
-                        "32px",
-                        {
-                                "lineHeight": "40px",
-                                "letterSpacing": "-0.01em",
-                                "fontWeight": "700"
-                        }
-                ],
-                "display-lg": [
-                        "48px",
-                        {
-                                "lineHeight": "56px",
-                                "letterSpacing": "-0.02em",
-                                "fontWeight": "800"
-                        }
-                ],
-                "headline-md": [
-                        "24px",
-                        {
-                                "lineHeight": "32px",
-                                "fontWeight": "700"
-                        }
-                ],
-                "headline-lg-mobile": [
-                        "28px",
-                        {
-                                "lineHeight": "36px",
-                                "fontWeight": "700"
-                        }
-                ],
-                "label-caps": [
-                        "12px",
-                        {
-                                "lineHeight": "16px",
-                                "letterSpacing": "0.05em",
-                                "fontWeight": "700"
-                        }
-                ],
-                "button": [
-                        "14px",
-                        {
-                                "lineHeight": "20px",
-                                "fontWeight": "600"
-                        }
-                ]
-        }
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+"colors": {
+"surface-container-lowest": "#ffffff",
+"primary-fixed-dim": "#bec6e0",
+"on-surface-variant": "#45464d",
+"on-error": "#ffffff",
+"inverse-on-surface": "#eff1f3",
+"primary": "#000000",
+"inverse-surface": "#2d3133",
+"surface-container-highest": "#e0e3e5",
+"on-error-container": "#93000a",
+"surface-tint": "#565e74",
+"surface": "#f7f9fb",
+"surface-bright": "#f7f9fb",
+"on-secondary-container": "#5c2400",
+"on-background": "#191c1e",
+"secondary-container": "#fd761a",
+"on-secondary-fixed-variant": "#783200",
+"error": "#ba1a1a",
+"tertiary-container": "#0b1c30",
+"inverse-primary": "#bec6e0",
+"outline": "#76777d",
+"on-tertiary-fixed": "#0b1c30",
+"error-container": "#ffdad6",
+"surface-container-high": "#e6e8ea",
+"on-secondary": "#ffffff",
+"primary-container": "#131b2e",
+"surface-container-low": "#f2f4f6",
+"on-primary-fixed-variant": "#3f465c",
+"on-tertiary-container": "#75859d",
+"on-secondary-fixed": "#341100",
+"tertiary-fixed": "#d3e4fe",
+"surface-container": "#eceef0",
+"tertiary-fixed-dim": "#b7c8e1",
+"surface-variant": "#e0e3e5",
+"secondary-fixed": "#ffdbca",
+"on-primary": "#ffffff",
+"background": "#f7f9fb",
+"secondary-fixed-dim": "#ffb690",
+"secondary": "#9d4300",
+"on-tertiary": "#ffffff",
+"surface-dim": "#d8dadc",
+"on-primary-fixed": "#131b2e",
+"on-tertiary-fixed-variant": "#38485d",
+"on-primary-container": "#7c839b",
+"on-surface": "#191c1e",
+"outline-variant": "#c6c6cd",
+"tertiary": "#000000",
+"primary-fixed": "#dae2fd"
 },
-    },
-  }
+"borderRadius": {
+"DEFAULT": "0.125rem",
+"lg": "0.25rem",
+"xl": "0.5rem",
+"full": "0.75rem"
+},
+"spacing": {
+"gutter": "24px",
+"stack-lg": "32px",
+"container-max": "680px",
+"margin-mobile": "16px",
+"stack-sm": "8px",
+"stack-md": "16px",
+"section-gap": "64px"
+},
+"fontFamily": {
+"body-lg": ["Public Sans"],
+"body-md": ["Public Sans"],
+"headline-lg": ["Inter"],
+"display-lg": ["Inter"],
+"headline-md": ["Inter"],
+"headline-lg-mobile": ["Inter"],
+"label-caps": ["Inter"],
+"button": ["Inter"]
+},
+"fontSize": {
+"body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+"body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+"headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+"display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+"headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+"headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+"label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+"button": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+}
+},
+},
+}
 </script>
 <style>
   .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+  }
+
+  /* ── Dialog base ── */
+  dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    max-width: min(640px, calc(100vw - 32px));
+    width: 100%;
+    max-height: calc(100dvh - 48px);
+    overflow: visible;
+  }
+
+  dialog:not([open]) { display: none; }
+
+  /* ── Backdrop ── */
+  dialog::backdrop {
+    background: rgba(25, 28, 30, 0.6);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+
+  /* ── Entrance animation ── */
+  @keyframes dialog-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes backdrop-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  dialog[open] .dialog-card {
+    animation: dialog-in 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  dialog[open]::backdrop {
+    animation: backdrop-in 0.2s ease both;
+  }
+
+  /* ── Exit animation ── */
+  @keyframes dialog-out {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(12px) scale(0.97);
+    }
+  }
+
+  @keyframes backdrop-out {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+
+  dialog.closing .dialog-card {
+    animation: dialog-out 0.18s cubic-bezier(0.4, 0, 1, 1) both;
+  }
+
+  dialog.closing::backdrop {
+    animation: backdrop-out 0.18s ease both;
+  }
+
+  /* ── Scrollable body ── */
+  .dialog-body {
+    overflow-y: auto;
+    max-height: calc(100dvh - 48px - 72px - 64px); /* viewport - padding - header - footer */
+    overscroll-behavior: contain;
+  }
+
+  /* ── Scrollbar styling ── */
+  .dialog-body::-webkit-scrollbar { width: 4px; }
+  .dialog-body::-webkit-scrollbar-track { background: transparent; }
+  .dialog-body::-webkit-scrollbar-thumb { background: #c6c6cd; border-radius: 2px; }
+
+  /* ── Prose styles inside dialog ── */
+  .dialog-prose h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #191c1e;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+  .dialog-prose h3:first-child { margin-top: 0; }
+
+  .dialog-prose p {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    color: #45464d;
+    margin-bottom: 12px;
+  }
+  .dialog-prose p:last-child { margin-bottom: 0; }
+
+  .dialog-prose ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 12px;
+  }
+  .dialog-prose ul li {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    color: #45464d;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+  .dialog-prose ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #fd761a;
+  }
+
+  /* ── Prevent body scroll while dialog is open ── */
+  body.dialog-open {
+    overflow: hidden;
   }
 </style>
 </head>
 <body class="bg-background text-on-background min-h-screen flex flex-col relative font-body-md antialiased selection:bg-secondary-container selection:text-white">
+
+<!-- ════════════════════════════════════════════════════════
+     DIALOGS
+     ════════════════════════════════════════════════════════ -->
+
+<!-- ── Privacy Policy ── -->
+<dialog id="dialog-privacy" aria-labelledby="dialog-privacy-title">
+  <div class="dialog-card bg-white border border-outline-variant rounded-sm shadow-2xl flex flex-col relative overflow-hidden">
+    <!-- Orange accent bar -->
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-secondary-container"></div>
+    <!-- Header -->
+    <div class="flex items-center justify-between px-8 pt-8 pb-6 border-b border-outline-variant">
+      <div>
+        <p class="font-label-caps text-label-caps uppercase tracking-wider text-secondary mb-1">Legal</p>
+        <h2 id="dialog-privacy-title" class="font-headline-md text-headline-md text-primary">Privacy Policy</h2>
+      </div>
+      <button onclick="closeDialog('dialog-privacy')" class="w-9 h-9 flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-sm transition-colors duration-150" aria-label="Close Privacy Policy">
+        <span class="material-symbols-outlined text-[22px]">close</span>
+      </button>
+    </div>
+    <!-- Body -->
+    <div class="dialog-body px-8 py-6">
+      <div class="dialog-prose">
+        <p>At <strong>Industry Insights</strong>, your privacy matters. This policy explains what information we collect, how we use it, and your rights regarding that information. We keep things simple — because we have nothing to hide.</p>
+
+        <h3>What We Collect</h3>
+        <p>We collect only the information you choose to give us:</p>
+        <ul>
+          <li>Your email address, submitted when you subscribe to our newsletter</li>
+          <li>Basic usage data (open rates, clicks) via our email platform to improve content</li>
+        </ul>
+        <p>We do not collect names, phone numbers, payment details, or any other personal data.</p>
+
+        <h3>How We Use Your Data</h3>
+        <ul>
+          <li>To deliver your weekly Industry Insights newsletter</li>
+          <li>To send occasional announcements about significant changes to the publication</li>
+          <li>To understand which content resonates with our readers (aggregated, never individual)</li>
+        </ul>
+
+        <h3>We Never Sell Your Data</h3>
+        <p>We will never sell, rent, or trade your email address to any third party. Full stop.</p>
+
+        <h3>Third-Party Services</h3>
+        <p>We use a third-party email service provider to deliver newsletters. They process your email address on our behalf and are bound by their own privacy policies and data processing agreements.</p>
+
+        <h3>Your Rights</h3>
+        <ul>
+          <li>Unsubscribe at any time using the link in any email or via our footer</li>
+          <li>Request deletion of your data by contacting us directly</li>
+          <li>Request a copy of the data we hold about you</li>
+        </ul>
+
+        <h3>Cookies</h3>
+        <p>This landing page does not use tracking cookies. If that changes, we will update this policy and notify subscribers.</p>
+
+        <h3>Changes to This Policy</h3>
+        <p>If we make material changes to how we handle your data, we will notify you via email before those changes take effect.</p>
+
+        <h3>Last Updated</h3>
+        <p>May 2025</p>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="px-8 py-5 border-t border-outline-variant bg-surface-container-low">
+      <button onclick="closeDialog('dialog-privacy')" class="w-full bg-primary text-white font-button text-button px-6 py-3 uppercase tracking-widest rounded-sm hover:bg-primary/90 transition-colors duration-150">
+        Got it
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<!-- ── Terms of Service ── -->
+<dialog id="dialog-terms" aria-labelledby="dialog-terms-title">
+  <div class="dialog-card bg-white border border-outline-variant rounded-sm shadow-2xl flex flex-col relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-secondary-container"></div>
+    <div class="flex items-center justify-between px-8 pt-8 pb-6 border-b border-outline-variant">
+      <div>
+        <p class="font-label-caps text-label-caps uppercase tracking-wider text-secondary mb-1">Legal</p>
+        <h2 id="dialog-terms-title" class="font-headline-md text-headline-md text-primary">Terms of Service</h2>
+      </div>
+      <button onclick="closeDialog('dialog-terms')" class="w-9 h-9 flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-sm transition-colors duration-150" aria-label="Close Terms of Service">
+        <span class="material-symbols-outlined text-[22px]">close</span>
+      </button>
+    </div>
+    <div class="dialog-body px-8 py-6">
+      <div class="dialog-prose">
+        <p>By subscribing to <strong>Industry Insights</strong>, you agree to the following terms. These are written plainly — no legal gymnastics required.</p>
+
+        <h3>The Service</h3>
+        <p>Industry Insights is a free, weekly email newsletter covering blue-collar industries including logistics, manufacturing, construction, and related sectors. Subscribing gives you access to each edition delivered to your inbox.</p>
+
+        <h3>Your Subscription</h3>
+        <ul>
+          <li>Subscriptions are free and can be cancelled at any time</li>
+          <li>We reserve the right to remove subscribers who misuse the service</li>
+          <li>You must provide a valid email address to subscribe</li>
+          <li>You may not subscribe on behalf of others without their consent</li>
+        </ul>
+
+        <h3>Our Content</h3>
+        <p>All newsletter content — including articles, analysis, and commentary — is the intellectual property of Industry Insights. You're welcome to share individual pieces with proper attribution, but you may not reproduce our content wholesale or use it for commercial purposes without written permission.</p>
+
+        <h3>No Warranties</h3>
+        <p>Our content is informational and reflects our editorial perspective. We make no guarantees about the accuracy, completeness, or timeliness of information published. Nothing in our newsletter constitutes financial, legal, or professional advice.</p>
+
+        <h3>Limitation of Liability</h3>
+        <p>Industry Insights is not liable for any decisions made based on our content. Use your own judgement and consult qualified professionals when making business or financial decisions.</p>
+
+        <h3>Changes to These Terms</h3>
+        <p>We may update these terms from time to time. Continued use of the newsletter after an update constitutes acceptance of the revised terms. We'll notify you of significant changes by email.</p>
+
+        <h3>Governing Law</h3>
+        <p>These terms are governed by applicable law. Any disputes will be handled in good faith before any formal proceedings.</p>
+
+        <h3>Last Updated</h3>
+        <p>May 2025</p>
+      </div>
+    </div>
+    <div class="px-8 py-5 border-t border-outline-variant bg-surface-container-low">
+      <button onclick="closeDialog('dialog-terms')" class="w-full bg-primary text-white font-button text-button px-6 py-3 uppercase tracking-widest rounded-sm hover:bg-primary/90 transition-colors duration-150">
+        Got it
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<!-- ── Contact ── -->
+<dialog id="dialog-contact" aria-labelledby="dialog-contact-title">
+  <div class="dialog-card bg-white border border-outline-variant rounded-sm shadow-2xl flex flex-col relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-secondary-container"></div>
+    <div class="flex items-center justify-between px-8 pt-8 pb-6 border-b border-outline-variant">
+      <div>
+        <p class="font-label-caps text-label-caps uppercase tracking-wider text-secondary mb-1">Get in touch</p>
+        <h2 id="dialog-contact-title" class="font-headline-md text-headline-md text-primary">Contact Us</h2>
+      </div>
+      <button onclick="closeDialog('dialog-contact')" class="w-9 h-9 flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-sm transition-colors duration-150" aria-label="Close Contact">
+        <span class="material-symbols-outlined text-[22px]">close</span>
+      </button>
+    </div>
+    <div class="dialog-body px-8 py-6">
+      <div class="dialog-prose">
+        <!-- ╔══════════════════════════════════════════════════════╗
+             ║  PLACEHOLDER — edit this section with your details  ║
+             ╚══════════════════════════════════════════════════════╝ -->
+        <p>We'd love to hear from you — whether it's a story tip, a partnership enquiry, reader feedback, or just a question about the newsletter.</p>
+
+        <h3>Email</h3>
+        <p><a href="mailto:hello@industryinsights.com" style="color:#fd761a;text-decoration:underline;text-underline-offset:3px;">hello@industryinsights.com</a></p>
+
+        <h3>Response Time</h3>
+        <p>We aim to respond within 2 business days. For subscriber support (missed issues, unsubscribing), please use the link at the bottom of any newsletter email.</p>
+
+        <h3>Story Tips</h3>
+        <p>Working in logistics, manufacturing, construction, or a related trade? We're always looking for people with real industry experience to inform our coverage. Reach out — we'd love to talk.</p>
+        <!-- ╔══════════════════════════════════════════════════════╗
+             ║  END PLACEHOLDER                                     ║
+             ╚══════════════════════════════════════════════════════╝ -->
+      </div>
+    </div>
+    <div class="px-8 py-5 border-t border-outline-variant bg-surface-container-low">
+      <button onclick="closeDialog('dialog-contact')" class="w-full bg-primary text-white font-button text-button px-6 py-3 uppercase tracking-widest rounded-sm hover:bg-primary/90 transition-colors duration-150">
+        Close
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<!-- ── Unsubscribe ── -->
+<dialog id="dialog-unsubscribe" aria-labelledby="dialog-unsubscribe-title">
+  <div class="dialog-card bg-white border border-outline-variant rounded-sm shadow-2xl flex flex-col relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-secondary-container"></div>
+    <div class="flex items-center justify-between px-8 pt-8 pb-6 border-b border-outline-variant">
+      <div>
+        <p class="font-label-caps text-label-caps uppercase tracking-wider text-secondary mb-1">Subscription</p>
+        <h2 id="dialog-unsubscribe-title" class="font-headline-md text-headline-md text-primary">Unsubscribe</h2>
+      </div>
+      <button onclick="closeDialog('dialog-unsubscribe')" class="w-9 h-9 flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-sm transition-colors duration-150" aria-label="Close Unsubscribe">
+        <span class="material-symbols-outlined text-[22px]">close</span>
+      </button>
+    </div>
+    <div class="dialog-body px-8 py-6">
+      <div class="dialog-prose">
+        <p>We're sorry to see you go. Here's how to unsubscribe from Industry Insights.</p>
+
+        <h3>The Easiest Way</h3>
+        <p>Every newsletter we send includes an <strong>Unsubscribe</strong> link at the very bottom. Click it and you'll be removed immediately — no confirmation emails, no dark patterns.</p>
+
+        <h3>Not Receiving Emails Yet?</h3>
+        <p>If you've just subscribed and want to cancel before your first issue arrives, simply email us and we'll remove you straight away.</p>
+
+        <h3>What Happens When You Unsubscribe</h3>
+        <ul>
+          <li>You will stop receiving the weekly newsletter immediately</li>
+          <li>Your email address is removed from our active mailing list</li>
+          <li>We retain a suppression record to ensure we don't accidentally re-add you</li>
+          <li>You can request full data deletion at any time by contacting us</li>
+        </ul>
+
+        <h3>Changed Your Mind?</h3>
+        <p>You're always welcome back. Just re-enter your email in the subscription form whenever you're ready.</p>
+      </div>
+    </div>
+    <div class="px-8 py-5 border-t border-outline-variant bg-surface-container-low">
+      <button onclick="closeDialog('dialog-unsubscribe')" class="w-full bg-primary text-white font-button text-button px-6 py-3 uppercase tracking-widest rounded-sm hover:bg-primary/90 transition-colors duration-150">
+        Got it
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE
+     ════════════════════════════════════════════════════════ -->
+
 <!-- Full Bleed Background with CSS fade to white at bottom -->
 <div class="fixed inset-0 z-0 bg-cover bg-top" style="background-image: url('assets/hero.png');"></div>
 <div class="fixed inset-0 z-0" style="background: linear-gradient(to bottom, transparent 40%, white 80%);"></div>
+
 <!-- Main Content Area -->
 <main class="flex-grow flex flex-col justify-center items-center relative z-10 px-margin-mobile md:px-0 pt-24 pb-12">
-<div class="w-full max-w-container-max bg-surface-container-lowest/95 backdrop-blur-sm p-8 md:p-12 border border-outline-variant rounded-sm shadow-2xl relative">
-<!-- Progress Bar (Thematic) -->
-<div class="absolute top-0 left-0 h-1 bg-secondary-container w-1/3"></div>
-<div class="text-center mb-10">
-<h1 class="font-display-lg text-display-lg md:text-[56px] md:leading-[64px] font-black text-primary mb-4 uppercase tracking-tighter">
-                THE ARCHITECTURE OF WORK
-            </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">
-                Deep dives into the blue-collar industries powering the world. Delivered weekly.
-            </p>
-</div>
-<form action="#" class="flex flex-col gap-4 max-w-md mx-auto" method="POST">
-<div class="relative">
-<input autocomplete="email" class="block w-full rounded-sm border-outline border bg-surface-container-low px-4 py-4 text-on-surface focus:border-secondary-container focus:ring-1 focus:ring-secondary-container focus:bg-white transition-colors duration-200 font-body-md placeholder:text-on-surface-variant/60 outline-none" id="email-address" name="email" placeholder="Enter your email address" required="" type="email"/>
-</div>
-<button class="w-full bg-secondary-container text-white font-button text-button px-6 py-4 uppercase tracking-widest shadow-[0_4px_0_0_#5c2400] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#5c2400] active:translate-y-[4px] active:shadow-none transition-all duration-150 flex items-center justify-center gap-2 rounded-sm" type="submit">
-                Subscribe
-                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-</button>
-</form>
-<div class="mt-8 pt-8 border-t border-outline-variant flex justify-center gap-4">
-<span class="inline-flex items-center px-2 py-1 bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant rounded-sm">
-                Logistics
-            </span>
-<span class="inline-flex items-center px-2 py-1 bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant rounded-sm">
-                Manufacturing
-            </span>
-<span class="inline-flex items-center px-2 py-1 bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant rounded-sm hidden md:inline-flex">
-                Construction
-            </span>
-</div>
-</div>
+  <div class="w-full max-w-container-max bg-surface-container-lowest/95 backdrop-blur-sm p-8 md:p-12 border border-outline-variant rounded-sm shadow-2xl relative">
+    <!-- Progress Bar (Thematic) -->
+    <div class="absolute top-0 left-0 h-1 bg-secondary-container w-1/3"></div>
+    <div class="text-center mb-10">
+      <h1 class="font-display-lg text-display-lg md:text-[56px] md:leading-[64px] font-black text-primary mb-4 uppercase tracking-tighter">
+        THE ARCHITECTURE OF WORK
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">
+        Deep dives into the blue-collar industries powering the world. Delivered weekly.
+      </p>
+    </div>
+    <form action="#" class="flex flex-col gap-4 max-w-md mx-auto" method="POST">
+      <div class="relative">
+        <input autocomplete="email" class="block w-full rounded-sm border-outline border bg-surface-container-low px-4 py-4 text-on-surface focus:border-secondary-container focus:ring-1 focus:ring-secondary-container focus:bg-white transition-colors duration-200 font-body-md placeholder:text-on-surface-variant/60 outline-none" id="email-address" name="email" placeholder="Enter your email address" required="" type="email"/>
+      </div>
+      <button class="w-full bg-secondary-container text-white font-button text-button px-6 py-4 uppercase tracking-widest shadow-[0_4px_0_0_#5c2400] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#5c2400] active:translate-y-[4px] active:shadow-none transition-all duration-150 flex items-center justify-center gap-2 rounded-sm" type="submit">
+        Subscribe
+        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </button>
+    </form>
+    <div class="mt-8 pt-8 border-t border-outline-variant flex justify-center gap-4">
+      <span class="inline-flex items-center px-2 py-1 bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant rounded-sm">
+        Logistics
+      </span>
+      <span class="inline-flex items-center px-2 py-1 bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant rounded-sm">
+        Manufacturing
+      </span>
+      <span class="inline-flex items-center px-2 py-1 bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant rounded-sm hidden md:inline-flex">
+        Construction
+      </span>
+    </div>
+  </div>
 </main>
+
 <!-- Shared Component: Footer -->
 <footer class="w-full py-stack-lg px-gutter flex flex-col md:flex-row justify-between items-center gap-stack-md bg-surface-container-lowest border-t border-outline-variant relative z-10">
-<div class="flex gap-6 font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">
-<a class="hover:text-secondary transition-colors duration-200" href="#">Privacy Policy</a>
-<a class="hover:text-secondary transition-colors duration-200" href="#">Terms of Service</a>
-<a class="hover:text-secondary transition-colors duration-200" href="#">Contact</a>
-<a class="hover:text-secondary transition-colors duration-200 hidden md:block" href="#">Unsubscribe</a>
-</div>
-<div class="font-body-md text-body-md text-on-surface-variant text-sm">
-        © 2024 Industry Insights. All rights reserved.
-    </div>
+  <div class="flex gap-6 font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">
+    <button onclick="openDialog('dialog-privacy')" class="hover:text-secondary transition-colors duration-200 cursor-pointer bg-transparent border-none p-0 font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Privacy Policy</button>
+    <button onclick="openDialog('dialog-terms')" class="hover:text-secondary transition-colors duration-200 cursor-pointer bg-transparent border-none p-0 font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Terms of Service</button>
+    <button onclick="openDialog('dialog-contact')" class="hover:text-secondary transition-colors duration-200 cursor-pointer bg-transparent border-none p-0 font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Contact</button>
+    <button onclick="openDialog('dialog-unsubscribe')" class="hover:text-secondary transition-colors duration-200 cursor-pointer bg-transparent border-none p-0 font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant hidden md:block">Unsubscribe</button>
+  </div>
+  <div class="font-body-md text-body-md text-on-surface-variant text-sm">
+    © 2024 Industry Insights. All rights reserved.
+  </div>
 </footer>
+
+<script>
+  function openDialog(id) {
+    const dialog = document.getElementById(id);
+    if (!dialog) return;
+    dialog.classList.remove('closing');
+    dialog.showModal();
+    document.body.classList.add('dialog-open');
+  }
+
+  function closeDialog(id) {
+    const dialog = document.getElementById(id);
+    if (!dialog || !dialog.open) return;
+
+    dialog.classList.add('closing');
+
+    dialog.addEventListener('animationend', function handler() {
+      dialog.close();
+      dialog.classList.remove('closing');
+      document.body.classList.remove('dialog-open');
+      dialog.removeEventListener('animationend', handler);
+    }, { once: true });
+  }
+
+  // Close on Escape key (native behaviour fires the 'cancel' event)
+  document.querySelectorAll('dialog').forEach(function(dialog) {
+    dialog.addEventListener('cancel', function(e) {
+      e.preventDefault(); // stop instant close so our animation can run
+      closeDialog(dialog.id);
+    });
+
+    // Close when clicking the backdrop
+    dialog.addEventListener('click', function(e) {
+      const rect = dialog.querySelector('.dialog-card').getBoundingClientRect();
+      const clickedOutside =
+        e.clientX < rect.left  ||
+        e.clientX > rect.right ||
+        e.clientY < rect.top   ||
+        e.clientY > rect.bottom;
+      if (clickedOutside) closeDialog(dialog.id);
+    });
+  });
+</script>
+
 </body></html>
