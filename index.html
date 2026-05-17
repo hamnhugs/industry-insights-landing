@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="description" content="Deep dives into the blue-collar industries powering the world. Logistics, manufacturing, and construction — delivered weekly."/>
+  <meta property="og:title" content="Industry Insights — The Architecture of Work"/>
+  <meta property="og:description" content="Deep dives into the blue-collar industries powering the world. Delivered weekly."/>
+  <title>Industry Insights — The Architecture of Work</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed-dim": "#bec6e0",
+            "on-surface-variant": "#45464d",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#eff1f3",
+            "primary": "#000000",
+            "inverse-surface": "#2d3133",
+            "surface-container-highest": "#e0e3e5",
+            "on-error-container": "#93000a",
+            "surface-tint": "#565e74",
+            "surface": "#f7f9fb",
+            "surface-bright": "#f7f9fb",
+            "on-secondary-container": "#5c2400",
+            "on-background": "#191c1e",
+            "secondary-container": "#fd761a",
+            "on-secondary-fixed-variant": "#783200",
+            "error": "#ba1a1a",
+            "tertiary-container": "#0b1c30",
+            "inverse-primary": "#bec6e0",
+            "outline": "#76777d",
+            "on-tertiary-fixed": "#0b1c30",
+            "error-container": "#ffdad6",
+            "surface-container-high": "#e6e8ea",
+            "on-secondary": "#ffffff",
+            "primary-container": "#131b2e",
+            "surface-container-low": "#f2f4f6",
+            "on-primary-fixed-variant": "#3f465c",
+            "on-tertiary-container": "#75859d",
+            "on-secondary-fixed": "#341100",
+            "tertiary-fixed": "#d3e4fe",
+            "surface-container": "#eceef0",
+            "tertiary-fixed-dim": "#b7c8e1",
+            "surface-variant": "#e0e3e5",
+            "secondary-fixed": "#ffdbca",
+            "on-primary": "#ffffff",
+            "background": "#f7f9fb",
+            "secondary-fixed-dim": "#ffb690",
+            "secondary": "#9d4300",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#d8dadc",
+            "on-primary-fixed": "#131b2e",
+            "on-tertiary-fixed-variant": "#38485d",
+            "on-primary-container": "#7c839b",
+            "on-surface": "#191c1e",
+            "outline-variant": "#c6c6cd",
+            "tertiary": "#000000",
+            "primary-fixed": "#dae2fd"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "gutter": "24px",
+            "stack-lg": "32px",
+            "container-max": "680px",
+            "margin-mobile": "16px",
+            "stack-sm": "8px",
+            "stack-md": "16px",
+            "section-gap": "64px"
+          },
+          fontFamily: {
+            "body-lg": ["Public Sans", "sans-serif"],
+            "body-md": ["Public Sans", "sans-serif"],
+            "headline-lg": ["Inter", "sans-serif"],
+            "display-lg": ["Inter", "sans-serif"],
+            "headline-md": ["Inter", "sans-serif"],
+            "headline-lg-mobile": ["Inter", "sans-serif"],
+            "label-caps": ["Inter", "sans-serif"],
+            "button": ["Inter", "sans-serif"]
+          },
+          fontSize: {
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+            "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "700" }],
+            "button": ["14px", { lineHeight: "20px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Subtle grain texture overlay */
+    .grain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col relative font-body-md antialiased selection:bg-secondary-container selection:text-white">
+
+  <!-- Full-bleed hero background -->
+  <div class="fixed inset-0 z-0 bg-cover bg-center grain" style="background-image: url('assets/hero.png');">
+    <!-- Dark overlay for readability -->
+    <div class="absolute inset-0 bg-black/65 z-0"></div>
+    <!-- Subtle vignette -->
+    <div class="absolute inset-0 z-0" style="background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.4) 100%);"></div>
+  </div>
+
+  <!-- Top nav -->
+  <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter py-4">
+    <div class="font-headline-md text-headline-md font-black tracking-tighter text-on-primary">
+      INDUSTRY INSIGHTS
+    </div>
+    <nav class="hidden md:flex gap-6 items-center">
+      <a class="text-on-primary border-b-2 border-secondary-container pb-1 font-label-caps text-label-caps hover:text-secondary-container transition-colors duration-200 uppercase tracking-widest" href="#">Latest</a>
+      <a class="text-on-primary/70 font-label-caps text-label-caps hover:text-secondary-container transition-colors duration-200 uppercase tracking-widest" href="#">Archive</a>
+      <a class="text-on-primary/70 font-label-caps text-label-caps hover:text-secondary-container transition-colors duration-200 uppercase tracking-widest" href="#">Industries</a>
+    </nav>
+    <div class="hidden md:block">
+      <button class="bg-transparent border border-on-primary/80 text-on-primary font-button text-button px-6 py-2 uppercase tracking-wide hover:bg-on-primary hover:text-primary transition-colors duration-200 rounded-sm">
+        Subscribe
+      </button>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-grow flex flex-col justify-center items-center relative z-10 px-margin-mobile md:px-0 pt-24 pb-12">
+    <div class="w-full max-w-container-max bg-surface-container-lowest/96 backdrop-blur-sm p-8 md:p-12 border border-outline-variant rounded-sm shadow-2xl relative overflow-hidden">
+
+      <!-- Orange progress bar accent -->
+      <div class="absolute top-0 left-0 h-[3px] bg-secondary-container w-1/3 rounded-r-full"></div>
+
+      <!-- Eyebrow label -->
+      <div class="flex justify-center mb-6">
+        <span class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant rounded-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-secondary-container inline-block"></span>
+          Weekly Newsletter
+        </span>
+      </div>
+
+      <!-- Headline block -->
+      <div class="text-center mb-10">
+        <h1 class="font-display-lg text-display-lg md:text-[52px] md:leading-[60px] font-black text-primary mb-4 uppercase tracking-tighter">
+          The Architecture<br class="hidden sm:block"/> of Work
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto">
+          Deep dives into the blue-collar industries powering the world — delivered every Thursday.
+        </p>
+      </div>
+
+      <!-- Stats row -->
+      <div class="flex justify-center gap-8 mb-10">
+        <div class="text-center">
+          <div class="font-headline-md text-headline-md font-black text-primary">12K+</div>
+          <div class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-widest">Subscribers</div>
+        </div>
+        <div class="w-px bg-outline-variant self-stretch"></div>
+        <div class="text-center">
+          <div class="font-headline-md text-headline-md font-black text-primary">Weekly</div>
+          <div class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-widest">Delivery</div>
+        </div>
+        <div class="w-px bg-outline-variant self-stretch"></div>
+        <div class="text-center">
+          <div class="font-headline-md text-headline-md font-black text-primary">Free</div>
+          <div class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-widest">Always</div>
+        </div>
+      </div>
+
+      <!-- Email form -->
+      <form action="#" class="flex flex-col gap-4 max-w-md mx-auto" method="POST" id="subscribe-form">
+        <div class="relative">
+          <input
+            autocomplete="email"
+            class="block w-full rounded-sm border border-outline bg-surface-container-low px-4 py-4 text-on-surface focus:border-secondary-container focus:ring-1 focus:ring-secondary-container focus:bg-white transition-colors duration-200 font-body-md placeholder:text-on-surface-variant/60 outline-none"
+            id="email-address"
+            name="email"
+            placeholder="Enter your work email"
+            required=""
+            type="email"
+          />
+        </div>
+        <button
+          class="w-full bg-secondary-container text-white font-button text-button px-6 py-4 uppercase tracking-widest shadow-[0_4px_0_0_#5c2400] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#5c2400] active:translate-y-[4px] active:shadow-none transition-all duration-150 flex items-center justify-center gap-2 rounded-sm"
+          type="submit"
+        >
+          Get the Newsletter
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </button>
+        <p class="text-center font-body-md text-[13px] text-on-surface-variant/70">
+          No spam. Unsubscribe anytime. Read by 12,000+ industry professionals.
+        </p>
+      </form>
+
+      <!-- Category tags -->
+      <div class="mt-8 pt-8 border-t border-outline-variant flex justify-center flex-wrap gap-3">
+        <span class="inline-flex items-center px-3 py-1.5 bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant rounded-sm">
+          Logistics
+        </span>
+        <span class="inline-flex items-center px-3 py-1.5 bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant rounded-sm">
+          Manufacturing
+        </span>
+        <span class="inline-flex items-center px-3 py-1.5 bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant rounded-sm">
+          Construction
+        </span>
+        <span class="inline-flex items-center px-3 py-1.5 bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase border border-outline-variant rounded-sm hidden sm:inline-flex">
+          Energy
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Social proof strip -->
+    <div class="mt-6 flex items-center gap-3 text-on-primary/70">
+      <div class="flex -space-x-2">
+        <div class="w-8 h-8 rounded-full bg-surface-container-high border-2 border-white/20 flex items-center justify-center font-label-caps text-label-caps text-on-surface-variant">J</div>
+        <div class="w-8 h-8 rounded-full bg-surface-container border-2 border-white/20 flex items-center justify-center font-label-caps text-label-caps text-on-surface-variant">M</div>
+        <div class="w-8 h-8 rounded-full bg-surface-dim border-2 border-white/20 flex items-center justify-center font-label-caps text-label-caps text-on-surface-variant">R</div>
+      </div>
+      <span class="font-body-md text-[14px]">Trusted by foremen, PMs, and VPs across the trades</span>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full py-stack-lg px-gutter flex flex-col md:flex-row justify-between items-center gap-stack-md bg-surface-container-lowest border-t border-outline-variant relative z-10">
+    <div class="font-headline-md text-headline-md text-primary font-black tracking-tighter">
+      INDUSTRY INSIGHTS
+    </div>
+    <div class="flex flex-wrap justify-center gap-6 font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">
+      <a class="hover:text-secondary transition-colors duration-200" href="#">Privacy Policy</a>
+      <a class="hover:text-secondary transition-colors duration-200" href="#">Terms of Service</a>
+      <a class="hover:text-secondary transition-colors duration-200" href="#">Contact</a>
+      <a class="hover:text-secondary transition-colors duration-200 hidden md:block" href="#">Unsubscribe</a>
+    </div>
+    <div class="font-body-md text-body-md text-on-surface-variant text-sm">
+      © 2025 Industry Insights. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type="submit"]');
+      const email = this.querySelector('input[type="email"]').value;
+      btn.textContent = 'You\'re in! Check your inbox.';
+      btn.classList.remove('bg-secondary-container');
+      btn.classList.add('bg-primary');
+      btn.disabled = true;
+    });
+  </script>
+
+</body>
+</html>
